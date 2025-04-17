@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nike Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background-color: #121212;
+      color: #f5f5f5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background-color: #1DB954;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1ed760;
+    }
+
+    #nav {
+      background-color: #1e1e1e;
+      padding: 20px 40px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    .navTop,
+    .navBottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .navItem {
+      margin: 10px;
+    }
+
+    .searchInput {
+      background-color: #2c2c2c;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      color: white;
+    }
+
+    .searchIcon {
+      vertical-align: middle;
+      margin-left: 10px;
+    }
+
+    .menuItem {
+      margin: 10px;
+      cursor: pointer;
+      color: #1DB954;
+    }
+
+    .slider {
+      padding: 40px;
+    }
+
+    .sliderWrapper {
+      display: flex;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      gap: 40px;
+    }
+
+    .sliderItem {
+      flex: 0 0 auto;
+      width: 300px;
+      position: relative;
+      background-color: #1a1a1a;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .sliderImg {
+      width: 100%;
+    }
+
+    .sliderTitle {
+      font-size: 24px;
+      color: #1DB954;
+      margin: 10px 0;
+    }
+
+    .sliderPrice {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .features {
+      display: flex;
+      justify-content: space-around;
+      background-color: #1e1e1e;
+      padding: 40px 20px;
+    }
+
+    .feature {
+      text-align: center;
+      max-width: 200px;
+    }
+
+    .featureTitle {
+      color: #1DB954;
+      font-weight: 700;
+      margin: 10px 0;
+    }
+
+    .featureDesc {
+      color: #cfcfcf;
+    }
+
+    .product {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      background-color: #1a1a1a;
+      padding: 40px;
+      border-radius: 16px;
+      margin: 40px;
+    }
+
+    .productImg {
+      max-width: 300px;
+      width: 100%;
+    }
+
+    .productDetails {
+      flex: 1;
+    }
+
+    .productTitle {
+      font-size: 36px;
+      color: #1DB954;
+    }
+
+    .productPrice {
+      font-size: 28px;
+      margin: 10px 0;
+    }
+
+    .productDesc {
+      color: #aaa;
+      margin-bottom: 20px;
+    }
+
+    .colors,
+    .sizes {
+      display: flex;
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .color,
+    .size {
+      width: 30px;
+      height: 30px;
+      background-color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      color: white;
+    }
+
+    .payment {
+      flex: 1;
+    }
+
+    .payTitle {
+      color: #1DB954;
+      margin: 20px 0 10px;
+    }
+
+    .payInput {
+      width: 100%;
+      padding: 10px;
+      margin: 6px 0;
+      background-color: #2c2c2c;
+      border: 1px solid #444;
+      color: white;
+      border-radius: 6px;
+    }
+
+    .cardIcons {
+      display: flex;
+      gap: 10px;
+      margin: 10px 0;
+    }
+
+    .cardInfo {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .sm {
+      width: 30%;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      background-color: #121212;
+      padding: 40px;
+    }
+
+    .galleryItem {
+      width: 30%;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .galleryImg {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .galleryTitle {
+      color: #1DB954;
+      margin: 10px 0;
+    }
+
+    .newSeason {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .nsItem {
+      width: 30%;
+      text-align: center;
+    }
+
+    .nsImg {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .nsTitleSm,
+    .nsTitle {
+      color: #1DB954;
+      margin: 10px 0;
+    }
+
+    footer {
+      background-color: #1e1e1e;
+      color: #ccc;
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .footerLeft,
+    .footerRight {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .footerMenu {
+      margin-bottom: 20px;
+    }
+
+    .fMenuTitle {
+      color: #1DB954;
+      margin-bottom: 10px;
+    }
+
+    .fList {
+      list-style: none;
+      padding: 0;
+    }
+
+    .fListItem {
+      margin: 6px 0;
+    }
+
+    .fMail {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .fInput {
+      background-color: #2c2c2c;
+      border: none;
+      padding: 10px;
+      border-radius: 6px;
+      color: white;
+    }
+
+    .fIcons {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .fIcon {
+      width: 30px;
+    }
+
+    .copyright {
+      font-size: 14px;
+      color: #666;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <script src="./app.js"></script>
+</body>
+
+</html>

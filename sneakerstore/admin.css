@@ -1,0 +1,35 @@
+a {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+body {
+    background-color: rgb(213, 205, 205); /* Corrected: added hyphen */
+}
+
+table {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #1472c1; /* Corrected: added hyphen */
+}
+
+th {
+    border: 1px solid #070707; /* Corrected: added space between 'solid' and color */
+    padding: 12px;
+    background-color: #070707;
+    color: white;
+}
+
+td {
+    border: 0.5px solid #111111; /* Corrected: added space between 'solid' and color */
+    padding: 10px;
+    color: white; /* Optional: ensures text is visible against dark background */
+}
+
+h2 {
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+}
